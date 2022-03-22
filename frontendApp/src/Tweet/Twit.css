@@ -1,0 +1,41 @@
+.twit{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #eaeaea;
+    margin-top: 10px;
+    padding: 10px;
+}
+.twit-text{
+    margin-left: 20px;
+    width: 70%;
+}
+.twit-text__title p{
+    font-size: 16px;
+}
+.twit-text__title span{
+    margin-left: 10px;
+    font-size: 14px;
+    color: rgb(184, 184, 184);
+}
+.twit-text__body{
+    font-size: 12px;
+    width: 100%;
+    margin: 10px 0 0 5px;
+    line-height: 14px;
+}
+.twit-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.twit-group span{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.twit-group button{
+    border-radius: 20px !important;
+}
+.twit:hover{
+    background-color: #e8eaf6;
+}

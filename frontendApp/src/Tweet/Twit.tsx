@@ -8,7 +8,6 @@ import ShareTwoToneIcon from '@mui/icons-material/ShareTwoTone';
 import Avatar from '@mui/material/Avatar';
 
 interface TwitProps {
-
     text: string;
     user: {
         fullname: string;

@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { FetchTwits } from '../store/ducks/twits/actionCreatores';
+import { SelectTwitsItems } from '../store/ducks/twits/selectors';
 import { Twit } from './Twit';
 
 export const TwitList = () => {
-    const defaultUser ={
-        fullname: 'string',
-        username: 'string',
-        avatarUrl: 'string',
-      }
-    const array = [{}, {}, {}, {}, {}, {}, {}, {}];
+    const dispatch = useDispatch();
+    const twits = useSelector(SelectTwitsItems);
+    useEffect(() => {
+        dispatch(FetchTwits());
+    }, [dispatch]);
+
     return (
         <div>
-            {array.map((i,idx) => (
+            {twits.map((twit) => (
                 <Twit
-                    key={idx+'lorem'}
-                    user={defaultUser}
-                    text={
-                        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore natus nam facere reprehenderit officia corrupti, recusandae repudiandae dolorum, quis, veniam odio sit. Obcaecati commodi excepturi consequuntur recusandae. Minima, fugiat quod.'
-                    }
+                    _id={twit._id}
+                    key={twit._id}
+                    user={twit.user}
+                    text={twit.text}
+                    avatarUrl={twit.user.avatarUrl}
                 />
             ))}
         </div>

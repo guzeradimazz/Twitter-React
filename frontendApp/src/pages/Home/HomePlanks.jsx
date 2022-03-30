@@ -1,36 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { FetchTags } from '../../store/tags/actionCreatores';
+import {
+    // SelectLoadingState,
+    SelectTagsItems
+} from '../../store/tags/selectors';
 
 export const HomePlanks = () => {
+    const dispatch = useDispatch();
+    const tags = useSelector(SelectTagsItems);
+    useEffect(() => {
+        dispatch(FetchTags());
+    }, [dispatch]);
     return (
         <div className="planks">
             <input type="text" placeholder="Поиск..." />
-            <div className="actual-info">
-                <div className="actual-info__title">Актуальная информация</div>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Sit odit rem odio placeat sed corrupti soluta adipisci
-                    quibusdam, expedita exercitationem voluptas maiores. Eos
-                    voluptatem assumenda ipsum enim suscipit quas impedit?
-                </p>
-            </div>
-            <div className="actual-info">
-                <div className="actual-info__title">Актуальная информация</div>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Sit odit rem odio placeat sed corrupti soluta adipisci
-                    quibusdam, expedita exercitationem voluptas maiores. Eos
-                    voluptatem assumenda ipsum enim suscipit quas impedit?
-                </p>
-            </div>
-            <div className="actual-info">
-                <div className="actual-info__title">Актуальная информация</div>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Sit odit rem odio placeat sed corrupti soluta adipisci
-                    quibusdam, expedita exercitationem voluptas maiores. Eos
-                    voluptatem assumenda ipsum enim suscipit quas impedit?
-                </p>
-            </div>
+            <h2>Актуальная информация</h2>
+            {tags.map((i) => (
+                <Link to={`/home/search?q=${i.title}`} key={i._id}>
+                    <div className="actual-info" >
+                        <div className="actual-info__title">{i.title}</div>
+                        <p>Твитов: {i.count}</p>
+                    </div>
+                </Link>
+            ))}
         </div>
     );
 };

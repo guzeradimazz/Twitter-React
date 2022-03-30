@@ -7,22 +7,17 @@ import EmailIcon from '@mui/icons-material/Email';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import PersonIcon from '@mui/icons-material/Person';
+import { Link } from 'react-router-dom';
 
 export const HomeNavBar = () => {
-    const menuArray = [
-        { id: 1, title: 'Поиск', icon: <SearchIcon /> },
-        { id: 2, title: 'Уведомления', icon: SearchIcon },
-        { id: 3, title: 'Сообщения', icon: SearchIcon },
-        { id: 4, title: 'Закладки', icon: SearchIcon },
-        { id: 5, title: 'Список', icon: SearchIcon },
-        { id: 6, title: 'Профиль', icon: SearchIcon }
-    ];
     return (
         <div className="navbar">
             <div className="navbar__menu">
-                <IconButton aria-label="default">
-                    <TwitterIcon color="primary" />
-                </IconButton>
+                <Link to='/home'>
+                    <IconButton aria-label="default">
+                        <TwitterIcon color="primary" />
+                    </IconButton>
+                </Link>
                 <IconButton>
                     <SearchIcon color="primary" />
                     <Typography color="grey">Поиск</Typography>
@@ -48,7 +43,7 @@ export const HomeNavBar = () => {
                     <Typography color="grey">Профиль</Typography>
                 </IconButton>
                 <Button color="primary">
-                    <Typography >Твитнуть</Typography>
+                    <Typography>Твитнуть</Typography>
                 </Button>
             </div>
             <div className="userIcon"></div>

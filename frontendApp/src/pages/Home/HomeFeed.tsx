@@ -3,14 +3,16 @@ import React from 'react';
 import { TwitList } from '../../Tweet/TwitList';
 import { useState } from 'react';
 
-export const HomeFeed = () => {
+export const HomeFeed: React.FC = (): React.ReactElement => {
     const [text, setText] = useState<string>('');
-
-    const handleChangeText = (e:React.FormEvent<HTMLInputElement>) => {
+    const handleChangeText = (e: React.FormEvent<HTMLInputElement>) => {
         if (e.currentTarget) {
             setText(e.currentTarget.value);
         }
     };
+
+
+
     return (
         <div className="feed">
             <h1>Главная</h1>
@@ -21,7 +23,7 @@ export const HomeFeed = () => {
                         type="text"
                         placeholder="Что происходит?"
                         value={text}
-                        onChange={(e)=>handleChangeText(e)}
+                        onChange={(e) => handleChangeText(e)}
                     />
                     <div className="button">
                         <IconButton color="primary">

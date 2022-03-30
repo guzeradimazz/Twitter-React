@@ -1,10 +1,12 @@
-export enum LoadingState{
+export enum LoadingState {
     LOADED = 'LOADED',
-    ERROR = 'ERROR',
     NEVER = 'NEVER',
+    LOADING = 'LOADING',
+    ERROR = 'ERROR'
 }
 
-export interface Twit{
+export interface Twit {
+    _id:string;
     text: string;
     user: {
         fullname: string;
@@ -14,6 +16,6 @@ export interface Twit{
 }
 
 export interface TwitsState {
-    items:Twit[];
+    items: Twit[];
     loadingState: LoadingState;
 }

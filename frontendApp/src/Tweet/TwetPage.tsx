@@ -12,8 +12,6 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
     const id = params._id;
 
     useEffect(() => {
-        
-        
         if (id) {
             dispatch(FetchTwitData(id));
         }

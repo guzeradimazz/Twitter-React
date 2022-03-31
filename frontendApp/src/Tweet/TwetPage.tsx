@@ -16,7 +16,6 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
             dispatch(FetchTwitData(id));
         }
     }, [dispatch, id, params]);
-
     if (!twitData.data) {
         return null;
     }
@@ -25,4 +24,4 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
             <Twit {...twitData.data} />
         </>
     );
-};
+}

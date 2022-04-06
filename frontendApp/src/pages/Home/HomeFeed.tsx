@@ -1,7 +1,10 @@
-import { Avatar, IconButton, Typography } from '@mui/material';
+import { Avatar } from '@mui/material';
 import React from 'react';
 import { TwitList } from '../../Tweet/TwitList';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchAddTwit } from '../../store/ducks/twits/actionCreatores';
+import Button from '../../UI/Button';
 
 export const HomeFeed: React.FC = (): React.ReactElement => {
     const [text, setText] = useState<string>('');
@@ -11,8 +14,11 @@ export const HomeFeed: React.FC = (): React.ReactElement => {
         }
     };
 
+    const dispatch = useDispatch();
 
-
+    const handleClickAddTwit = () => {
+        dispatch(fetchAddTwit(text));
+    };
     return (
         <div className="feed">
             <h1>Главная</h1>
@@ -25,10 +31,12 @@ export const HomeFeed: React.FC = (): React.ReactElement => {
                         value={text}
                         onChange={(e) => handleChangeText(e)}
                     />
-                    <div className="button">
-                        <IconButton color="primary">
-                            <Typography color="grey">Твитнуть</Typography>
-                        </IconButton>
+                    <div className="btnAdd">
+                        <Button
+                            onClick={handleClickAddTwit}
+                            classNameProp={'blueBtn blueBtntext'}
+                            title={'Твитнуть'}
+                        ></Button>
                     </div>
                 </div>
             </div>

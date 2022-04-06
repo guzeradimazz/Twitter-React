@@ -1,11 +1,9 @@
-import React from 'react';
-
-const Button = ({classNameProp, title, onClick}) => {
+const Button = ({ classNameProp, title, onClick }) => {
     return (
         <>
-            <button onClick={()=>onClick()} className={classNameProp}>
+            <button onClick={() => onClick()} className={classNameProp}>
                 {title}
-            </button> 
+            </button>
         </>
     );
 };

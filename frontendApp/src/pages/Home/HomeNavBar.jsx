@@ -1,19 +1,20 @@
 import React from 'react';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import SearchIcon from '@mui/icons-material/Search';
-import { Button, IconButton, Typography } from '@mui/material';
+import { IconButton, Typography } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import EmailIcon from '@mui/icons-material/Email';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import PersonIcon from '@mui/icons-material/Person';
 import { Link } from 'react-router-dom';
+import Button from '../../UI/Button';
 
-export const HomeNavBar = () => {
+export const HomeNavBar = ({ setIsOpenModal }) => {
     return (
         <div className="navbar">
             <div className="navbar__menu">
-                <Link to='/home'>
+                <Link to="/home">
                     <IconButton aria-label="default">
                         <TwitterIcon color="primary" />
                     </IconButton>
@@ -42,9 +43,12 @@ export const HomeNavBar = () => {
                     <PersonIcon color="primary" />
                     <Typography color="grey">Профиль</Typography>
                 </IconButton>
-                <Button color="primary">
-                    <Typography>Твитнуть</Typography>
-                </Button>
+
+                <Button
+                    onClick={() => setIsOpenModal(true)}
+                    classNameProp={'blueBtn blueBtntext'}
+                    title={'Твитнуть'}
+                ></Button>
             </div>
             <div className="userIcon"></div>
         </div>

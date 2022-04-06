@@ -21,6 +21,9 @@ export const twitsReducer = produce(
             case TwitsActionsType.SET_LOADING_STATE:
                 draft.loadingState = action.payload;
                 break;
+            case TwitsActionsType.ADD_TWIT:
+                draft.items.unshift(action.payload)
+                break;
             default:
                 break;
         }

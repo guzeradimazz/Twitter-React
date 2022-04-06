@@ -1,41 +1,79 @@
-.twit{
+.twit {
     display: flex;
     flex-direction: row;
     border: 1px solid #eaeaea;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
 }
-.twit-text{
+.twit-text {
     margin-left: 20px;
     width: 70%;
 }
-.twit-text__title p{
+.twit-text__title p {
     font-size: 16px;
 }
-.twit-text__title span{
+.twit-text__title span {
     margin-left: 10px;
     font-size: 14px;
     color: rgb(184, 184, 184);
 }
-.twit-text__body{
+.twit-text__body {
     font-size: 12px;
     width: 100%;
     margin: 10px 0 0 5px;
     line-height: 14px;
 }
-.twit-group{
+.twit-group {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 20px;
 }
-.twit-group span{
+.twit-group span {
     font-size: 14px;
     margin-left: 10px;
 }
-.twit-group button{
+.twit-group button {
     border-radius: 20px !important;
 }
-.twit:hover{
-    background-color: #e8eaf6;
+.twit:hover {
+    background-color: #ececec9e;
+}
+.flexFeed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+}
+.flexFeed h1 {
+    border: none;
+}
+.twit-personal {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eaeaea;
+    border-top: none;
+    padding: 20px;
+}
+.twit_item__header {
+    display: flex;
+}
+.avatar {
+    width: 100px !important;
+    height: 100px !important;
+    background-size: cover !important;
+}
+.twit_header__fullname {
+    font-weight: normal;
+    margin: 0 0 -10px 30px;
+    font-size: 20px;
+}
+.twit_header__username {
+    color: #3c3c3c9e;
+    margin-left: 20px;
+}
+.twit-personal p {
+    font-weight: normal;
+    font-size: 22px;
+    padding-top: 20px;
 }

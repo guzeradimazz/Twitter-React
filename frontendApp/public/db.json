@@ -1,140 +1,91 @@
 {
-    "twits": [
-        {
-            "_id": "623dc0f94c826c49671df7ea",
-            "index": 0,
-            "text": "Cupidatat ea labore et irure officia sit culpa exercitation do. Ad pariatur culpa cillum enim. Nostrud adipisicing ipsum est ex excepteur aute dolor voluptate ex et. Enim nostrud esse minim reprehenderit. Nulla officia est est commodo ipsum deserunt quis Lorem id tempor non ullamco fugiat.",
-            "user": {
-                "fullname": "Haley Osborne",
-                "username": "downs",
-                "avatarUrl": "https://random.imagecdn.app/100/100?5"
-            }
-        },
-        {
-            "_id": "623dc0f9f8a7acd29681b633",
-            "index": 1,
-            "text": "Velit duis exercitation quis duis ex mollit excepteur Lorem eiusmod laboris. Sit elit do ad in ea deserunt ad nulla est dolor mollit esse non. Sint reprehenderit ut qui est exercitation laborum dolore et. Duis consequat aute amet duis nisi esse incididunt. Velit qui non do cillum tempor occaecat fugiat duis pariatur occaecat.",
-            "user": {
-                "fullname": "Lora Cohen",
-                "username": "louella",
-                "avatarUrl": "https://random.imagecdn.app/100/100?5"
-            }
-        },
-        {
-            "_id": "623dc0f949745fec769dd09b",
-            "index": 2,
-            "text": "Mollit tempor elit irure sint reprehenderit ullamco ea sint dolore ipsum esse duis minim mollit. Qui occaecat cillum deserunt do magna. Ut commodo cillum aliqua eiusmod consectetur in adipisicing officia elit qui nisi aute pariatur. Commodo ut dolor est ipsum aliqua. In exercitation do duis nisi et.",
-            "user": {
-                "fullname": "Sykes Miles",
-                "username": "faye",
-                "avatarUrl": "https://random.imagecdn.app/100/100?1"
-            }
-        },
-        {
-            "_id": "623dc0f9731b4f15963a45d8",
-            "index": 3,
-            "text": "Lorem dolor irure irure incididunt aute laborum est sunt et non. Eu elit veniam aliquip amet labore excepteur laboris magna est consequat exercitation est duis elit. Et esse Lorem minim exercitation elit occaecat velit labore cillum quis ipsum qui. Ut in excepteur reprehenderit culpa commodo et voluptate duis labore reprehenderit et occaecat eu. Veniam nulla aliqua irure officia ullamco dolore incididunt.",
-            "user": {
-                "fullname": "Richardson Roy",
-                "username": "natasha",
-                "avatarUrl": "https://random.imagecdn.app/100/100?2"
-            }
-        },
-        {
-            "_id": "623dc0f99c842cc228305109",
-            "index": 4,
-            "text": "Amet id sit commodo proident sit nostrud cupidatat anim excepteur incididunt. Excepteur Lorem nostrud consectetur ipsum deserunt. Lorem reprehenderit et dolore occaecat laborum non occaecat fugiat. Nostrud commodo amet ad id nostrud sunt voluptate irure mollit nisi. Cillum laborum qui nisi officia voluptate nisi excepteur ad consectetur.",
-            "user": {
-                "fullname": "Gonzales Acosta",
-                "username": "samantha",
-                "avatarUrl": "https://random.imagecdn.app/100/100?2"
-            }
-        },
-        {
-            "_id": "623dc0f9894955fc887ae809",
-            "index": 5,
-            "text": "Culpa consequat in Lorem quis incididunt aute nisi sit esse laborum ullamco qui culpa. Nulla ipsum ipsum deserunt nulla commodo qui commodo proident exercitation cupidatat dolore dolore exercitation elit. Excepteur consequat commodo id cillum pariatur eu ut sit amet sunt. Nostrud dolore voluptate voluptate voluptate reprehenderit sunt labore. Excepteur aliqua duis aliquip voluptate irure quis mollit adipisicing velit eiusmod aliquip pariatur in est.",
-            "user": {
-                "fullname": "Jami Neal",
-                "username": "lori",
-                "avatarUrl": "https://random.imagecdn.app/100/100?4"
-            }
-        },
-        {
-            "_id": "623dc0f9e5985b842a22dc41",
-            "index": 6,
-            "text": "Nulla labore mollit eu in. Nulla ad proident fugiat aliquip aliquip eu culpa amet enim nostrud. Sit incididunt do aliqua fugiat proident deserunt sint et sint ex. Duis ad ea do sunt duis. Veniam nulla ut sit enim duis elit.",
-            "user": {
-                "fullname": "Bessie Mathis",
-                "username": "pat",
-                "avatarUrl": "https://random.imagecdn.app/100/100?5"
-            }
-        },
-        {
-            "_id": "623dc0f947f4b8502b35ced2",
-            "index": 7,
-            "text": "Culpa amet ipsum ex do magna laboris et laborum dolore aute. Cupidatat qui aliqua magna est id dolor non tempor ad dolor dolor. Culpa elit consectetur eu Lorem sit sunt magna sunt deserunt dolor veniam minim id elit. Dolor ea esse ipsum reprehenderit nisi reprehenderit qui sunt officia. Consequat ullamco aute non eiusmod eiusmod et mollit occaecat.",
-            "user": {
-                "fullname": "Davidson Olsen",
-                "username": "malone",
-                "avatarUrl": "https://random.imagecdn.app/100/100?3"
-            }
-        },
-        {
-            "_id": "623dc0f94f2b6121c5ba82a7",
-            "index": 8,
-            "text": "Ad irure ipsum anim anim labore incididunt do enim Lorem cillum aliquip. Officia nulla amet non aute in velit reprehenderit elit est Lorem deserunt. Eiusmod eu exercitation exercitation amet ad cupidatat sunt. Aliquip deserunt cupidatat dolor esse esse. Deserunt esse consequat tempor Lorem enim.",
-            "user": {
-                "fullname": "Carole Logan",
-                "username": "joyce",
-                "avatarUrl": "https://random.imagecdn.app/100/100?2"
-            }
-        },
-        {
-            "_id": "623dc0f9557fd49a8f4530a9",
-            "index": 9,
-            "text": "Consectetur amet velit ullamco culpa esse veniam consectetur qui proident in aute deserunt. Proident laboris culpa excepteur ea consequat nostrud velit eu culpa ad sit proident adipisicing consectetur. Amet do ut reprehenderit magna commodo ea veniam proident enim reprehenderit. Irure est laborum incididunt consectetur ex voluptate. Occaecat culpa duis adipisicing consectetur dolore exercitation enim id eu non magna incididunt.",
-            "user": {
-                "fullname": "Barton Reeves",
-                "username": "spencer",
-                "avatarUrl": "https://random.imagecdn.app/100/100?3"
-            }
-        }
-    ],
-    "user": {
-        "_id": "623dc0f9557fd49a8f4530a9",
-        "fullname": "Barton Reeves",
-        "username": "spencer",
-        "avatarUrl": "https://random.imagecdn.app/100/100?3"
+  "twits": [
+    {
+      "id": 1,
+      "_id": "623dc0f9f8a7acd29681b633",
+      "index": 1,
+      "text": "Velit duis exercitation quis duis ex mollit excepteur Lorem eiusmod laboris. Sit elit do ad in ea deserunt ad nulla est dolor mollit esse non. Sint reprehenderit ut qui est exercitation laborum dolore et. Duis consequat aute amet duis nisi esse incididunt. Velit qui non do cillum tempor occaecat fugiat duis pariatur occaecat.",
+      "user": {
+        "fullname": "Lora Cohen",
+        "username": "louella",
+        "avatarUrl": "https://random.imagecdn.app/100/100?5"
+      }
     },
-    "tags": [
-        {
-            "title": "#HandOfRussianHistory",
-            "_id": "623dc0f95rglbjfe57fd49a8f4530a9",
-            "count":4567
-        },
-        { "title": "#Беларусь", "_id": "623dc0f9557fd49a8f4gweg530a9",
-            "count":100027 },
-        { "title": "#Программирование", "_id": "623dc0f955er1r7fd49a8f4530a9",
-            "count":57 },
-        { "title": "#JAVA", "_id": "623drgewaegc0f9557fd49a8f4530a9",
-            "count":15627 }
-    ],
-    "users": [
-        {
-            "fullname": "Barton Reeves",
-            "username": "spencer",
-            "avatarUrl": "https://random.imagecdn.app/100/100?3"
-        },
-        {
-            "fullname": "Davidson Olsen",
-            "username": "malone",
-            "avatarUrl": "https://random.imagecdn.app/100/100?3"
-        },
-        {
-            "fullname": "Jami Neal",
-            "username": "lori",
-            "avatarUrl": "https://random.imagecdn.app/100/100?4"
-        }
-    ]
+    {
+      "id": 2,
+      "_id": "623dc0f949745fec769dd09b",
+      "index": 2,
+      "text": "Mollit tempor elit irure sint reprehenderit ullamco ea sint dolore ipsum esse duis minim mollit. Qui occaecat cillum deserunt do magna. Ut commodo cillum aliqua eiusmod consectetur in adipisicing officia elit qui nisi aute pariatur. Commodo ut dolor est ipsum aliqua. In exercitation do duis nisi et.",
+      "user": {
+        "fullname": "Sykes Miles",
+        "username": "faye",
+        "avatarUrl": "https://random.imagecdn.app/100/100?1"
+      }
+    },
+    {
+      "_id": "b3soziu6lcj",
+      "text": "b nbmnm",
+      "user": {
+        "fullname": "Test user",
+        "username": "test",
+        "avatarUrl": "https://random.imagecdn.app/100/100?5"
+      },
+      "id": 3
+    },
+    {
+      "_id": "vebro6n9vie",
+      "text": "twit",
+      "user": {
+        "fullname": "Test user",
+        "username": "test",
+        "avatarUrl": "https://random.imagecdn.app/100/100?5"
+      },
+      "id": 4
+    }
+  ],
+  "user": {
+    "_id": "623dc0f9557fd49a8f4530a9",
+    "fullname": "Barton Reeves",
+    "username": "spencer",
+    "avatarUrl": "https://random.imagecdn.app/100/100?3"
+  },
+  "tags": [
+    {
+      "title": "#HandOfRussianHistory",
+      "_id": "623dc0f95rglbjfe57fd49a8f4530a9",
+      "count": 4567
+    },
+    {
+      "title": "#Беларусь",
+      "_id": "623dc0f9557fd49a8f4gweg530a9",
+      "count": 100027
+    },
+    {
+      "title": "#Программирование",
+      "_id": "623dc0f955er1r7fd49a8f4530a9",
+      "count": 57
+    },
+    {
+      "title": "#JAVA",
+      "_id": "623drgewaegc0f9557fd49a8f4530a9",
+      "count": 15627
+    }
+  ],
+  "users": [
+    {
+      "fullname": "Barton Reeves",
+      "username": "spencer",
+      "avatarUrl": "https://random.imagecdn.app/100/100?3"
+    },
+    {
+      "fullname": "Davidson Olsen",
+      "username": "malone",
+      "avatarUrl": "https://random.imagecdn.app/100/100?3"
+    },
+    {
+      "fullname": "Jami Neal",
+      "username": "lori",
+      "avatarUrl": "https://random.imagecdn.app/100/100?4"
+    }
+  ]
 }

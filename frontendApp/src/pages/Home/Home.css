@@ -4,7 +4,6 @@
     justify-content: space-between;
     width: 80vw;
     margin: 10px auto 0 auto;
-    position: relative;
 }
 .navbar {
     width: 210px;
@@ -55,7 +54,7 @@
     margin: 0 auto;
 }
 .feed {
-    width: 50%;
+    width: 60%;
 }
 .feed h1 {
     position: sticky;
@@ -70,29 +69,32 @@
     border-bottom: 1px solid #eaeaea;
 }
 .planks {
-    width: 20%;
+    width: 25%;
     height: 80vh;
     top: 0;
     position: sticky;
 }
 .planks input {
     width: 100%;
-    margin: 10px auto;
+    margin: 40px auto;
     border: none;
     background-color: #fff;
     color: black;
     border-radius: 20px;
     height: 45px;
     font-size: 18px;
-    padding-left: 5px;
+    padding-left: 15px;
     box-shadow: 0 0 10px rgb(194, 218, 255);
 }
+.planks h2 {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
 .actual-info {
-    background-color: #e9e9e9;
-    border-radius: 20px;
+    background-color: #ececec9e;
     padding: 15px;
     color: black;
-    margin-top: 10px;
     transition: 0.3s ease;
     cursor: pointer;
 }
@@ -115,19 +117,60 @@
 .twit-block {
     display: flex;
     flex-direction: row;
+    position: relative;
+    height: 180px;
 }
 .twit-block input {
     width: 92%;
+    height: 50px;
     margin-left: 20px;
     padding: 10px;
+    border: 2px solid #eaeaea;
+    border-radius: 5px;
 }
 .userAvatar {
     width: 60px !important;
     height: 60px !important;
     margin-top: 10px;
 }
-.button button{
-    border-radius: 20px !important;
+.btnAdd {
+    display: flex;
     width: 200px !important;
-
+    flex-direction: row;
+    position: absolute;
+    right: 20px;
+}
+.btnAdd button {
+    margin-top: 50px;
+    padding: 0 !important;
+    border-radius: 5px !important;
+}
+.modalAddTwit {
+    position: fixed !important;
+    width: 100vw !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10000 !important;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+.modalAddTwitContent {
+    position: absolute !important;
+    display: flex !important;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: #fff;
+    z-index: 200000 !important;
+    top: 20%;
+    left: 30%;
+}
+.modalAddTwitContent input {
+    outline: none;
+    width: 90%;
+    height: 50px;
+    margin-bottom: 50px;
+    border: 2px solid #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
 }

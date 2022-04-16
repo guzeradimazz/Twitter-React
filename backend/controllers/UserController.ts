@@ -19,6 +19,23 @@ class UserController {
         }
     }
 
+    async show(req: express.Request, res: express.Response): Promise<void> {
+        try {
+            const userId = req.params.id
+            if (userId) {
+                const user = await UserModel.findById(userId).exec()
+                res.json({
+                    status: 'success',
+                    data: user,
+                })
+            }
+        } catch (error) {
+            res.json({
+                status: 'error',
+            })
+        }
+    }
+
     async create(req: express.Request, res: express.Response): Promise<void> {
         try {
             const errors = validationResult(req)
@@ -33,7 +50,7 @@ class UserController {
                 email: req.body.email,
                 username: req.body.username,
                 fullname: req.body.fullname,
-                password: req.body.password,
+                password: generateHash(req.body.password),
                 confirmedHash: generateHash(Math.random().toString()),
             }
             const user = await UserModel.create(data)

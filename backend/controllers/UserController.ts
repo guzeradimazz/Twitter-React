@@ -1,8 +1,9 @@
 import express from 'express'
 import { validationResult } from 'express-validator'
-import { UserModel } from '../models/UserModel'
+import { UserModel, UserDocumentType } from '../models/UserModel'
 import { generateHash } from '../utils/generateHash'
 import { SendMail } from '../utils/SendMail'
+import jwt from 'jsonwebtoken'
 
 class UserController {
     async index(_: any, res: express.Response): Promise<void> {
@@ -62,7 +63,7 @@ class UserController {
                     subject: 'Подтверждение почты Twitter',
                     html: `Для того, чтобы подтвердить почту, перейдите <a href="http://localhost:${
                         process.env.PORT || 8888
-                    }/users/verify?hash=${
+                    }/auth/verify?hash=${
                         data.confirmedHash
                     }">по этой ссылке</a>`,
                 },
@@ -106,6 +107,46 @@ class UserController {
                     data: user,
                 })
             }
+        } catch (error) {
+            res.json({
+                status: 'error',
+            })
+        }
+    }
+
+    async afterLogin(
+        req: any,
+        res: express.Response
+    ): Promise<void> {
+        try {
+            const user = req.user
+                ? (req.user as UserDocumentType).toJSON()
+                : null
+            res.json({
+                status: 'success',
+                data: {
+                    ...user,
+                    token: jwt.sign({ data: req.user }, 'topsecret', {
+                        expiresIn: '30 days',
+                    }),
+                },
+            })
+        } catch (error) {
+            res.json({
+                status: 'error',
+            })
+        }
+    }
+
+    async getUserInfo(req: any, res: express.Response): Promise<void> {
+        try {
+            const user = req.user
+                ? (req.user as UserDocumentType).toJSON()
+                : undefined
+            res.json({
+                status: 'success',
+                data: user,
+            })
         } catch (error) {
             res.json({
                 status: 'error',

@@ -7,7 +7,7 @@ import { LoadingState } from './contracts/state';
 
 export function* fetchDataRequest ({payload:  twitId }:FetchTwitDataActionInterface){
     try {
-        const {data} = yield call(axios.get,`/twits?_id=${twitId}`)
+        const {data} = yield call(axios.get,`/twits/${twitId}`)
         yield put(SetTwitData(data[0]))
     } catch (error) {
         console.log(error);

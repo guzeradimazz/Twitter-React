@@ -8,16 +8,19 @@ export interface TwitModelInterface {
 }
 export type TwitDocumentType = TwitModelInterface & Document
 
-const TwitSchema = new Schema<TwitModelInterface>({
-    text: {
-        required: true,
-        type: String,
+const TwitSchema = new Schema<TwitModelInterface>(
+    {
+        text: {
+            required: true,
+            type: String,
+        },
+        user: {
+            ref: 'User',
+            required: true,
+            type: Schema.Types.ObjectId,
+        },
     },
-    user: {
-        ref: 'User',
-        required: true,
-        type: Schema.Types.ObjectId,
-    },
-})
+    { timestamps: true }
+)
 
 export const TwitModel = model<TwitModelInterface>('Twit', TwitSchema)

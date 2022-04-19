@@ -7,18 +7,21 @@ import {
     TwitsActionsType
 } from './actionCreatores';
 import axios from 'axios';
-import { LoadingState, Twit } from './contracts/state';
+import { LoadingState, Twit, TwitsState } from './contracts/state'
 
-export function* fetchTwitsRequest() {
+
+
+export function* fetchTwitsRequest(){
     try {
-        const { data } = yield call(axios.get, '/twits?_sort=id&_order=desc');
-        yield put(SetTwits(data));
+        const { data } = yield call(axios.get, '/twits');
+        yield put(SetTwits(data.data));
     } catch (error) {
         yield put(setTwitsLoadingState(LoadingState.ERROR));
     }
 }
-function addTwitFunction(payload: Twit): Promise<Twit> {
-    return axios.post('/twits', payload).then(({ data }) => data);
+async function addTwitFunction(payload: Twit): Promise<Twit> {
+    const { data } = await axios.post('/twits', payload)
+    return data
 }
 export function* addTwitRequest({ payload }: FetchAddTwitActionInterface) {
     try {

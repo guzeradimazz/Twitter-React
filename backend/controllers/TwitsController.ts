@@ -80,9 +80,34 @@ class TwitController {
                     //     typeof twit.user != 'string' &&
                     //     twit.user._id === user._id
                     // ) {
-                        twit.remove()
-                        res.send()
+                    twit.remove()
+                    res.send()
                     // }
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    async update(req: express.Request, res: express.Response): Promise<void> {
+        try {
+            const user = req.user as UserModelInterface
+            if (user) {
+                const errors = validationResult(req)
+                if (!errors.isEmpty()) {
+                    res.json({
+                        status: 'error',
+                    })
+                    return
+                }
+                const twitId = req.params.id
+                const twit = await TwitModel.findById({ _id: twitId })
+                if (twit) {
+                    const text = req.body.text
+                    twit.text = text
+                    twit.save()
+                    res.send()
                 }
             }
         } catch (err) {

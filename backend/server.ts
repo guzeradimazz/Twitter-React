@@ -29,6 +29,12 @@ app.post(
     twitsValidation,
     TwitCtrl.create
 )
+app.post(
+    '/twits',
+    passport.authenticate('jwt'),
+    twitsValidation,
+    TwitCtrl.update
+)
 app.delete('/twits/:id', passport.authenticate('jwt'), TwitCtrl.delete)
 
 app.post('/auth/register', registerValidation, UserCtrl.create)

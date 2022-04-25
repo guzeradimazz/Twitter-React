@@ -1,30 +1,31 @@
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { SelectTwitData } from '../store/tweet/selectors';
-import { FetchTwitData } from '../store/tweet/actionCreatores';
-import { HomeNavBar } from '../pages/Home/HomeNavBar';
-import { HomePlanks } from '../pages/Home/HomePlanks';
-import { Link } from 'react-router-dom';
-import { IconButton, Avatar } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { ModalTwit } from '../pages/Home/ModalTwit';
-import { useState } from 'react';
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { SelectTwitData } from '../store/tweet/selectors'
+import { FetchTwitData } from '../store/tweet/actionCreatores'
+import { HomeNavBar } from '../pages/Home/HomeNavBar'
+import { HomePlanks } from '../pages/Home/HomePlanks'
+import { Link } from 'react-router-dom'
+import { IconButton, Avatar } from '@mui/material'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import { ModalTwit } from '../pages/Home/ModalTwit'
+import { useState } from 'react'
+import { formatDate } from './Twit'
 
 export const TwetPage: React.FC = (): React.ReactElement | null => {
-    const dispatch = useDispatch();
-    const twitData = useSelector(SelectTwitData);
-    const params: { _id?: string } = useParams();
-    const id = params._id;
-    const [isOpenModal, setIsOpenModal] = useState(false);
+    const dispatch = useDispatch()
+    const twitData = useSelector(SelectTwitData)
+    const params: { _id?: string } = useParams()
+    const id = params._id
+    const [isOpenModal, setIsOpenModal] = useState(false)
 
     useEffect(() => {
         if (id) {
-            dispatch(FetchTwitData(id));
+            dispatch(FetchTwitData(id))
         }
-    }, [dispatch, id, params]);
+    }, [dispatch, id, params])
 
-    if (!twitData.data) return null;
+    if (!twitData.data) return null
     return (
         <section className="home">
             <ModalTwit isOpen={isOpenModal} setIsOpen={setIsOpenModal} />
@@ -51,6 +52,9 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
                             </span>
                             <span className="twit_header__username">
                                 @{twitData.data.user.username}
+                            </span><br /><br /><br />
+                            <span className="twit_header__fullname">
+                                {formatDate(new Date(twitData.data.createdAt))} назад
                             </span>
                         </div>
                     </div>
@@ -59,5 +63,5 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
             </div>
             <HomePlanks />
         </section>
-    );
-};
+    )
+}

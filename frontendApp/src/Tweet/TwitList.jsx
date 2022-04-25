@@ -19,6 +19,7 @@ export const TwitList = () => {
                     key={twit._id}
                     user={twit.user}
                     text={twit.text}
+                    createdAt={twit.createdAt}
                     avatarUrl={twit.user.avatarUrl}
                 />
             ))}

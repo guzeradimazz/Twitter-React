@@ -9,7 +9,7 @@ export const isValidObjectId = mongoose.Types.ObjectId.isValid
 class TwitController {
     async index(_: any, res: express.Response): Promise<void> {
         try {
-            const twits = await TwitModel.find({}).exec()
+            const twits = await TwitModel.find({}).populate('user').sort({'createdAt':-1}).exec()
             res.json({
                 status: 'success',
                 data: twits,
@@ -25,7 +25,7 @@ class TwitController {
         try {
             const twitId = req.params.id
             if (twitId) {
-                const twit = await TwitModel.findById(twitId).exec()
+                const twit = await TwitModel.findById(twitId).populate('user').exec()
                 res.json({
                     status: 'success',
                     data: twit,
@@ -56,7 +56,7 @@ class TwitController {
                 const twit = await TwitModel.create(data)
                 res.json({
                     status: 'success',
-                    data: twit,
+                    data: await twit.populate('user'),
                 })
             }
         } catch (error) {}

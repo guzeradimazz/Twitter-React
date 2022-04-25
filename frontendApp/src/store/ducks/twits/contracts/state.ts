@@ -2,20 +2,21 @@ export enum LoadingState {
     LOADED = 'LOADED',
     NEVER = 'NEVER',
     LOADING = 'LOADING',
-    ERROR = 'ERROR'
+    ERROR = 'ERROR',
 }
 
 export interface Twit {
-    _id:string;
-    text: string;
+    _id: string
+    text: string
+    createdAt: string
     user: {
-        fullname: string;
-        username: string;
-        avatarUrl: string;
-    };
+        fullname: string
+        username: string
+        avatarUrl: string
+    }
 }
 
 export interface TwitsState {
-    items: Twit[];
-    loadingState: LoadingState;
+    items: Twit[]
+    loadingState: LoadingState
 }

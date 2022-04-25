@@ -1,7 +1,7 @@
 
 import { takeLatest, call, put } from 'redux-saga/effects';
 import { SetTags, setTagsLoadingState, TagsActionsType } from './actionCreatores';
-import axios from 'axios';
+import { axios } from '../../core/axios'
 import { LoadingState } from './contracts/state';
 
 

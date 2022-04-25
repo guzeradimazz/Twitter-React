@@ -1,47 +1,49 @@
-import { takeLatest, call, put } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects'
 import {
     AddTwit,
     FetchAddTwitActionInterface,
     SetTwits,
     setTwitsLoadingState,
-    TwitsActionsType
-} from './actionCreatores';
-import axios from 'axios';
-import { LoadingState, Twit, TwitsState } from './contracts/state'
+    TwitsActionsType,
+} from './actionCreatores'
+import { axios } from '../../../core/axios'
+import { LoadingState, Twit } from './contracts/state'
 
-
-
-export function* fetchTwitsRequest(){
+export function* fetchTwitsRequest() {
     try {
-        const { data } = yield call(axios.get, '/twits');
-        yield put(SetTwits(data.data));
+        const { data } = yield call(axios.get, '/twits')
+        yield put(SetTwits(data.data))
     } catch (error) {
-        yield put(setTwitsLoadingState(LoadingState.ERROR));
+        yield put(setTwitsLoadingState(LoadingState.ERROR))
     }
 }
-async function addTwitFunction(payload: Twit): Promise<Twit> {
-    const { data } = await axios.post('/twits', payload)
+async function addTwitFunction(payload: string): Promise<Twit> {
+    const { data } = await axios.post('/twits', {
+        text: payload,
+    })
     return data
 }
-export function* addTwitRequest({ payload }: FetchAddTwitActionInterface) {
+export function* addTwitRequest({
+    payload: text,
+}: FetchAddTwitActionInterface) {
     try {
-        const data: Twit = {
-            _id: Math.random().toString(36).substring(2),
-            text: payload,
-            user: {
-                fullname: 'Test user',
-                username: 'test',
-                avatarUrl: 'https://random.imagecdn.app/100/100?5'
-            }
-        };
-        const item: Twit = yield call(addTwitFunction, data);
-        yield put(AddTwit(item));
+        // const data: Twit = {
+        //     _id: Math.random().toString(36).substring(2),
+        //     text: payload,
+        //     user: {
+        //         fullname: 'Test user',
+        //         username: 'test',
+        //         avatarUrl: 'https://random.imagecdn.app/100/100?12',
+        //     },
+        // }
+        const item: Twit = yield call(addTwitFunction, text)
+        yield put(AddTwit(item))
     } catch (error) {
-        yield put(setTwitsLoadingState(LoadingState.ERROR));
+        yield put(setTwitsLoadingState(LoadingState.ERROR))
     }
 }
 
 export function* twitsSaga() {
-    yield takeLatest(TwitsActionsType.FETCH_TWITS, fetchTwitsRequest);
-    yield takeLatest(TwitsActionsType.FETCH_ADD_TWIT, addTwitRequest);
+    yield takeLatest(TwitsActionsType.FETCH_TWITS, fetchTwitsRequest)
+    yield takeLatest(TwitsActionsType.FETCH_ADD_TWIT, addTwitRequest)
 }

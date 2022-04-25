@@ -65,12 +65,13 @@
 }
 .twit_header__fullname {
     font-weight: normal;
-    margin: 0 0 -10px 30px;
+    margin: 5px 0 -10px 30px;
     font-size: 20px;
 }
 .twit_header__username {
     color: #3c3c3c9e;
     margin-left: 20px;
+    padding-top: -5px;
 }
 .twit-personal p {
     font-weight: normal;

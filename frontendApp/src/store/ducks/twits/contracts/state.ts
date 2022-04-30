@@ -3,6 +3,7 @@ export enum LoadingState {
     NEVER = 'NEVER',
     LOADING = 'LOADING',
     ERROR = 'ERROR',
+    SUCCESS = 'SUCCESS',
 }
 
 export interface Twit {

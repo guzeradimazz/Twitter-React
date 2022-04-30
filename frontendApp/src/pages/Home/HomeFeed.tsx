@@ -1,24 +1,24 @@
-import { Avatar } from '@mui/material';
-import React from 'react';
-import { TwitList } from '../../Tweet/TwitList';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchAddTwit } from '../../store/ducks/twits/actionCreatores';
-import Button from '../../UI/Button';
+import { Avatar } from '@mui/material'
+import React from 'react'
+import { TwitList } from '../../Tweet/TwitList'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchAddTwit } from '../../store/ducks/twits/actionCreatores'
+import Button from '../../UI/Button'
 
 export const HomeFeed: React.FC = (): React.ReactElement => {
-    const [text, setText] = useState<string>('');
+    const [text, setText] = useState<string>('')
     const handleChangeText = (e: React.FormEvent<HTMLInputElement>) => {
-        if (e.currentTarget) {
-            setText(e.currentTarget.value);
-        }
-    };
+        if (e.currentTarget) setText(e.currentTarget.value)
+    }
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
     const handleClickAddTwit = () => {
-        dispatch(fetchAddTwit(text));
-    };
+        dispatch(fetchAddTwit(text))
+        window.location.reload()
+    }
+
     return (
         <div className="feed">
             <h1>Главная</h1>
@@ -42,5 +42,5 @@ export const HomeFeed: React.FC = (): React.ReactElement => {
             </div>
             <TwitList />
         </div>
-    );
-};
+    )
+}

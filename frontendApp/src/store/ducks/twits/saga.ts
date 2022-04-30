@@ -27,15 +27,6 @@ export function* addTwitRequest({
     payload: text,
 }: FetchAddTwitActionInterface) {
     try {
-        // const data: Twit = {
-        //     _id: Math.random().toString(36).substring(2),
-        //     text: payload,
-        //     user: {
-        //         fullname: 'Test user',
-        //         username: 'test',
-        //         avatarUrl: 'https://random.imagecdn.app/100/100?12',
-        //     },
-        // }
         const item: Twit = yield call(addTwitFunction, text)
         yield put(AddTwit(item))
     } catch (error) {

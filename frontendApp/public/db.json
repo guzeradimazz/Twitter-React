@@ -1,54 +1,4 @@
 {
-  "twits": [
-    {
-      "id": 1,
-      "_id": "623dc0f9f8a7acd29681b633",
-      "index": 1,
-      "text": "Velit duis exercitation quis duis ex mollit excepteur Lorem eiusmod laboris. Sit elit do ad in ea deserunt ad nulla est dolor mollit esse non. Sint reprehenderit ut qui est exercitation laborum dolore et. Duis consequat aute amet duis nisi esse incididunt. Velit qui non do cillum tempor occaecat fugiat duis pariatur occaecat.",
-      "user": {
-        "fullname": "Lora Cohen",
-        "username": "louella",
-        "avatarUrl": "https://random.imagecdn.app/100/100?5"
-      }
-    },
-    {
-      "id": 2,
-      "_id": "623dc0f949745fec769dd09b",
-      "index": 2,
-      "text": "Mollit tempor elit irure sint reprehenderit ullamco ea sint dolore ipsum esse duis minim mollit. Qui occaecat cillum deserunt do magna. Ut commodo cillum aliqua eiusmod consectetur in adipisicing officia elit qui nisi aute pariatur. Commodo ut dolor est ipsum aliqua. In exercitation do duis nisi et.",
-      "user": {
-        "fullname": "Sykes Miles",
-        "username": "faye",
-        "avatarUrl": "https://random.imagecdn.app/100/100?1"
-      }
-    },
-    {
-      "_id": "b3soziu6lcj",
-      "text": "b nbmnm",
-      "user": {
-        "fullname": "Test user",
-        "username": "test",
-        "avatarUrl": "https://random.imagecdn.app/100/100?5"
-      },
-      "id": 3
-    },
-    {
-      "_id": "vebro6n9vie",
-      "text": "twit",
-      "user": {
-        "fullname": "Test user",
-        "username": "test",
-        "avatarUrl": "https://random.imagecdn.app/100/100?5"
-      },
-      "id": 4
-    }
-  ],
-  "user": {
-    "_id": "623dc0f9557fd49a8f4530a9",
-    "fullname": "Barton Reeves",
-    "username": "spencer",
-    "avatarUrl": "https://random.imagecdn.app/100/100?3"
-  },
   "tags": [
     {
       "title": "#HandOfRussianHistory",
@@ -69,23 +19,6 @@
       "title": "#JAVA",
       "_id": "623drgewaegc0f9557fd49a8f4530a9",
       "count": 15627
-    }
-  ],
-  "users": [
-    {
-      "fullname": "Barton Reeves",
-      "username": "spencer",
-      "avatarUrl": "https://random.imagecdn.app/100/100?3"
-    },
-    {
-      "fullname": "Davidson Olsen",
-      "username": "malone",
-      "avatarUrl": "https://random.imagecdn.app/100/100?3"
-    },
-    {
-      "fullname": "Jami Neal",
-      "username": "lori",
-      "avatarUrl": "https://random.imagecdn.app/100/100?4"
     }
   ]
 }

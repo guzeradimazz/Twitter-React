@@ -1,21 +1,25 @@
-import React from 'react';
-import Button from '../../UI/Button';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchAddTwit } from '../../store/ducks/twits/actionCreatores';
+import React, { useEffect } from 'react'
+import Button from '../../UI/Button'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchAddTwit } from '../../store/ducks/twits/actionCreatores'
 
 export const ModalTwit = ({ isOpen, setIsOpen }: any) => {
-    const [text, setText] = useState<string>('');
+    const [text, setText] = useState<string>('')
+    // const [isEmpty, setEmpty] = useState<boolean>(true)
     const handleChangeText = (e: React.FormEvent<HTMLInputElement>) => {
-        if (e.currentTarget) setText(e.currentTarget.value);
-    };
-
-    const dispatch = useDispatch();
+        if (e.currentTarget) setText(e.currentTarget.value)
+    }
+    // useEffect(() => {
+    //     if (!!text) setEmpty(false)
+    //     else setEmpty(true)
+    // }, [text])
+    const dispatch = useDispatch()
 
     const handleClickAddTwit = () => {
-        dispatch(fetchAddTwit(text));
-    };
-    if (!isOpen) return null;
+        dispatch(fetchAddTwit(text))
+    }
+    if (!isOpen) return null
     else {
         return (
             <div className={isOpen ? 'modalAddTwit' : 'displayNone'}>
@@ -40,10 +44,20 @@ export const ModalTwit = ({ isOpen, setIsOpen }: any) => {
                                 value={text}
                                 onChange={(e) => handleChangeText(e)}
                             />
-                            <div className="btnAdd">
+                            <div
+                                className={
+                                    // isEmpty ? 'disabledBtn' :
+                                    'btnAdd'
+                                }
+                            >
                                 <Button
                                     onClick={handleClickAddTwit}
-                                    classNameProp={'blueBtn blueBtntext'}
+                                    classNameProp={
+                                        // isEmpty
+                                        //     ? 'disabledBtn'
+                                        // :
+                                        'blueBtn blueBtntext'
+                                    }
                                     title={'Твитнуть'}
                                 ></Button>
                             </div>
@@ -51,6 +65,6 @@ export const ModalTwit = ({ isOpen, setIsOpen }: any) => {
                     </div>
                 </div>
             </div>
-        );
+        )
     }
-};
+}

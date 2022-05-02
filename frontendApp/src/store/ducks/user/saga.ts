@@ -3,6 +3,7 @@ import { LogInApi } from '../../../core/LogInApi'
 import { LoadingState } from '../twits/contracts/state'
 import {
     FetchUserDataActionInterface,
+    FethcSignUpActionInterface,
     setUserData,
     setUserDataLoading,
     UserActionsType,
@@ -18,6 +19,17 @@ export function* fetchSignIn({ payload }: FetchUserDataActionInterface): any {
     }
 }
 
+export function* fetchSignUp({ payload }: FethcSignUpActionInterface): any {
+    try {
+        yield put(setUserDataLoading(LoadingState.LOADING))
+        yield call(LogInApi.signUp, payload)
+        yield put(setUserDataLoading(LoadingState.SUCCESS))
+    } catch (error) {
+        yield put(setUserDataLoading(LoadingState.ERROR))
+    }
+}
+
 export function* userSaga() {
     yield takeLatest(UserActionsType.FETCH_SIGNIN, fetchSignIn)
+    yield takeLatest(UserActionsType.FETCH_SIGNUP, fetchSignUp)
 }

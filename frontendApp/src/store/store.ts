@@ -3,7 +3,7 @@ import { rootReducer } from './rootReducer'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas'
 import { TwitsState } from './ducks/twits/contracts/state'
-import { TagsState } from './tags/contracts/state'
+// import { TagsState } from './tags/contracts/state'
 import { TwitDataState } from './tweet/contracts/state'
 import { UserState } from './ducks/user/contracts/state'
 
@@ -14,7 +14,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 export interface rootState {
     twits: TwitsState
-    tags: TagsState
+    // tags: TagsState
     twit: TwitDataState
     user: UserState
 }

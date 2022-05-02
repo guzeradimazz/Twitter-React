@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './SignIn.css'
 import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { LogInApi } from '../../core/LogInApi'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { fetchUserData } from '../../store/ducks/user/actionCreatores'
-import { selectUserStatus } from '../../store/ducks/user/selectors'
-import { LoadingState } from '../../store/ducks/twits/contracts/state'
 
 interface Login {
     isOpenIn: boolean
@@ -26,7 +23,6 @@ const ModalIn: React.FC<Login> = ({
     isOpenIn,
     setIsOpenIn,
 }): React.ReactElement | null => {
-    const loadingStatus = useSelector(selectUserStatus)
     const dispatch = useDispatch()
 
 
@@ -37,17 +33,12 @@ const ModalIn: React.FC<Login> = ({
     const onSubmit = async(data: LoginForm) => {
         try {
             dispatch(fetchUserData(data))
-            const user = await LogInApi.signIn(data)
-            console.log(user);
-            
+            setIsOpenIn(false)
         } catch (error) {
             console.log(error);
             
         }
     }
-    // useEffect(()=>{
-    //     if(loadingStatus === LoadingState.LOADED) 
-    // },[loadingStatus])
 
     if (!isOpenIn) {
         return null

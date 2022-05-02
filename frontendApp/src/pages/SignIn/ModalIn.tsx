@@ -11,8 +11,8 @@ interface Login {
     setIsOpenIn: (boolean: boolean) => void
 }
 const LoginSchema = yup.object().shape({
-    email: yup.string().email().required("Введите почту"),
-    password: yup.string().required("Введите пароль"),
+    email: yup.string().email().required('Введите почту'),
+    password: yup.string().required('Введите пароль'),
 })
 
 export interface LoginForm {
@@ -25,18 +25,16 @@ const ModalIn: React.FC<Login> = ({
 }): React.ReactElement | null => {
     const dispatch = useDispatch()
 
-
     const { register, handleSubmit } = useForm<LoginForm>({
         resolver: yupResolver(LoginSchema),
     })
 
-    const onSubmit = async(data: LoginForm) => {
+    const onSubmit = async (data: LoginForm) => {
         try {
             dispatch(fetchUserData(data))
             setIsOpenIn(false)
         } catch (error) {
-            console.log(error);
-            
+            console.log(error)
         }
     }
 
@@ -58,16 +56,18 @@ const ModalIn: React.FC<Login> = ({
                             type="email"
                             placeholder="E-mail"
                             id="email"
-                            {...register("email")}
+                            {...register('email')}
                         />
                         <input
                             className="defaultInput"
                             type="password"
                             placeholder="Пароль"
                             id="password"
-                            {...register("password")}
+                            {...register('password')}
                         />
-                        <button className="blueBtn" type='submit'>Войти</button>
+                        <button className="blueBtn" type="submit">
+                            Войти
+                        </button>
                     </form>
                 </div>
             </div>

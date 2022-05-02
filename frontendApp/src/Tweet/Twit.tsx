@@ -19,6 +19,7 @@ interface TwitProps {
         username: string
         avatarUrl: string
     }
+    like: number
 }
 export const formatDate = (date: Date): string => {
     return formatDistanse(date, new Date(), { locale: ruLang })
@@ -29,6 +30,7 @@ export const Twit: React.FC<TwitProps> = ({
     text,
     createdAt,
     user,
+    like,
 }: TwitProps): React.ReactElement => {
     return (
         <Link to={`/home/twit/${_id}`}>
@@ -38,7 +40,8 @@ export const Twit: React.FC<TwitProps> = ({
                     <div className="twit-text__title">
                         <b>{user.fullname}</b>{' '}
                         <span>
-                            @{user.username} - {formatDate(new Date(createdAt))} назад
+                            @{user.username} - {formatDate(new Date(createdAt))}{' '}
+                            назад
                         </span>
                     </div>
                     <div className="twit-text__body">{text}</div>
@@ -49,7 +52,7 @@ export const Twit: React.FC<TwitProps> = ({
                         </IconButton>
                         <IconButton aria-label="default">
                             <FavoriteTwoToneIcon color="error" />
-                            <span>1</span>
+                            <span>{like}</span>
                         </IconButton>
                         <IconButton aria-label="default">
                             <AutorenewTwoToneIcon color="warning" />

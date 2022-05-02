@@ -1,12 +1,4 @@
-// import { useEffect } from 'react'
-// import { useDispatch } from 'react-redux'
-// import { FetchTags } from '../../store/tags/actionCreatores'
-
 export const HomePlanks = () => {
-    // const dispatch = useDispatch()
-    // useEffect(() => {
-    //     dispatch(FetchTags())
-    // }, [dispatch])
     return (
         <div className="planks">
             <input type="text" placeholder="Поиск..." />

@@ -1,16 +1,17 @@
-import React from 'react';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import SearchIcon from '@mui/icons-material/Search';
-import { IconButton, Typography } from '@mui/material';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import EmailIcon from '@mui/icons-material/Email';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
-import ListAltIcon from '@mui/icons-material/ListAlt';
-import PersonIcon from '@mui/icons-material/Person';
-import { Link } from 'react-router-dom';
-import Button from '../../UI/Button';
+import LanguageIcon from '@mui/icons-material/Language'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import { IconButton, Typography } from '@mui/material'
+import VpnKeyIcon from '@mui/icons-material/VpnKey'
+import PersonIcon from '@mui/icons-material/Person'
+import { Link } from 'react-router-dom'
+import Button from '../../UI/Button'
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export const HomeNavBar = ({ setIsOpenModal }) => {
+
+    const handleOut = ()=>{
+        window.localStorage.clear()
+    }
     return (
         <div className="navbar">
             <div className="navbar__menu">
@@ -19,30 +20,30 @@ export const HomeNavBar = ({ setIsOpenModal }) => {
                         <TwitterIcon color="primary" />
                     </IconButton>
                 </Link>
-                <IconButton>
-                    <SearchIcon color="primary" />
-                    <Typography color="grey">Поиск</Typography>
-                </IconButton>
-                <IconButton>
-                    <NotificationsIcon color="primary" />
-                    <Typography color="grey">Уведомления</Typography>
-                </IconButton>
-                <IconButton>
-                    <EmailIcon color="primary" />
-                    <Typography color="grey">Сообщения</Typography>
-                </IconButton>
-                <IconButton>
-                    <BookmarkIcon color="primary" />
-                    <Typography color="grey">Закладки</Typography>
-                </IconButton>
-                <IconButton>
-                    <ListAltIcon color="primary" />
-                    <Typography color="grey">Список</Typography>
-                </IconButton>
-                <IconButton>
-                    <PersonIcon color="primary" />
-                    <Typography color="grey">Профиль</Typography>
-                </IconButton>
+                <Link to="/home">
+                    <IconButton>
+                        <LanguageIcon color="primary" />
+                        <Typography color="grey">Главная</Typography>
+                    </IconButton>
+                </Link>
+                <Link to="/signin" onClick={handleOut}>
+                    <IconButton>
+                        <VpnKeyIcon color="primary" />
+                        <Typography color="grey">Регистрация</Typography>
+                    </IconButton>
+                </Link>
+                <Link to="/signin" onClick={handleOut}>
+                    <IconButton>
+                        <LogoutIcon color="primary" />
+                        <Typography color="grey">Выход</Typography>
+                    </IconButton>
+                </Link>
+                <Link to='/home'>
+                    <IconButton>
+                        <PersonIcon color="primary" />
+                        <Typography color="grey">Профиль</Typography>
+                    </IconButton>
+                </Link>
 
                 <Button
                     onClick={() => setIsOpenModal(true)}
@@ -52,5 +53,5 @@ export const HomeNavBar = ({ setIsOpenModal }) => {
             </div>
             <div className="userIcon"></div>
         </div>
-    );
-};
+    )
+}

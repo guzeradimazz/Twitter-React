@@ -5,6 +5,7 @@ export interface TwitModelInterface {
     _id?: String
     text: String
     user: UserDocumentType | String
+    like: Number
 }
 export type TwitDocumentType = TwitModelInterface & Document
 
@@ -18,6 +19,10 @@ const TwitSchema = new Schema<TwitModelInterface>(
             ref: 'User',
             required: true,
             type: Schema.Types.ObjectId,
+        },
+        like: {
+            required: false,
+            type: Number,
         },
     },
     { timestamps: true }

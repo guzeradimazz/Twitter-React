@@ -39,11 +39,7 @@ const ModalReg: React.FC<Register> = ({
     const onSubmit = async (data: RegisterForm) => {
         try {
             dispatch(fethcSignUp(data))
-            // const user = await LogInApi.signIn(data)
-            // console.log(user)
-        } catch (error) {
-            // console.log(error)
-        }
+        } catch (error) {}
     }
 
     if (!isOpenIn) {
@@ -64,37 +60,39 @@ const ModalReg: React.FC<Register> = ({
                             type="fullname"
                             placeholder="Полное имя"
                             id="fullname"
-                            {...register("fullname")}
+                            {...register('fullname')}
                         />
                         <input
                             className="defaultInput"
                             type="username"
                             placeholder="Логин"
                             id="username"
-                            {...register("username")}
+                            {...register('username')}
                         />
                         <input
                             className="defaultInput"
                             type="email"
                             placeholder="E-mail"
                             id="email"
-                            {...register("email")}
+                            {...register('email')}
                         />
                         <input
                             className="defaultInput"
                             type="password"
                             placeholder="Пароль"
                             id="password"
-                            {...register("password")}
+                            {...register('password')}
                         />
                         <input
                             className="defaultInput"
                             type="password"
                             placeholder="Повторите пароль"
                             id="password2"
-                            {...register("password2")}
+                            {...register('password2')}
                         />
-                        <button type='submit' className="blueBtn">Зарегистрироваться</button>
+                        <button type="submit" className="blueBtn">
+                            Зарегистрироваться
+                        </button>
                     </form>
                 </div>
             </div>

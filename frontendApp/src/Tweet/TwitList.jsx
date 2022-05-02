@@ -21,6 +21,7 @@ export const TwitList = () => {
                     text={twit.text}
                     createdAt={twit.createdAt}
                     avatarUrl={twit.user.avatarUrl}
+                    like={twit.like}
                 />
             ))}
         </div>

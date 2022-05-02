@@ -11,6 +11,10 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { ModalTwit } from '../pages/Home/ModalTwit'
 import { useState } from 'react'
 import { formatDate } from './Twit'
+import ChatBubbleOutlineTwoToneIcon from '@mui/icons-material/ChatBubbleOutlineTwoTone'
+import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone'
+import AutorenewTwoToneIcon from '@mui/icons-material/AutorenewTwoTone'
+import ShareTwoToneIcon from '@mui/icons-material/ShareTwoTone'
 
 export const TwetPage: React.FC = (): React.ReactElement | null => {
     const dispatch = useDispatch()
@@ -59,6 +63,22 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
                         </div>
                     </div>
                     <p>{twitData.data.text}</p>
+                    <div className="twit-group">
+                        <IconButton aria-label="default">
+                            <ChatBubbleOutlineTwoToneIcon color="primary" />
+                            <span>1</span>
+                        </IconButton>
+                        <IconButton aria-label="default">
+                            <FavoriteTwoToneIcon color="error" />
+                            <span>{twitData.data.like}</span>
+                        </IconButton>
+                        <IconButton aria-label="default">
+                            <AutorenewTwoToneIcon color="warning" />
+                        </IconButton>
+                        <IconButton aria-label="default">
+                            <ShareTwoToneIcon />
+                        </IconButton>
+                    </div>
                 </div>
             </div>
             <HomePlanks />

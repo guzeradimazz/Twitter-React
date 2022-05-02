@@ -15,6 +15,7 @@ export interface Twit {
         username: string
         avatarUrl: string
     }
+    like: number
 }
 
 export interface TwitsState {

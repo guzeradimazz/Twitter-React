@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Button from '../../UI/Button'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -6,14 +6,9 @@ import { fetchAddTwit } from '../../store/ducks/twits/actionCreatores'
 
 export const ModalTwit = ({ isOpen, setIsOpen }: any) => {
     const [text, setText] = useState<string>('')
-    // const [isEmpty, setEmpty] = useState<boolean>(true)
     const handleChangeText = (e: React.FormEvent<HTMLInputElement>) => {
         if (e.currentTarget) setText(e.currentTarget.value)
     }
-    // useEffect(() => {
-    //     if (!!text) setEmpty(false)
-    //     else setEmpty(true)
-    // }, [text])
     const dispatch = useDispatch()
 
     const handleClickAddTwit = () => {
@@ -44,20 +39,10 @@ export const ModalTwit = ({ isOpen, setIsOpen }: any) => {
                                 value={text}
                                 onChange={(e) => handleChangeText(e)}
                             />
-                            <div
-                                className={
-                                    // isEmpty ? 'disabledBtn' :
-                                    'btnAdd'
-                                }
-                            >
+                            <div className={'btnAdd'}>
                                 <Button
                                     onClick={handleClickAddTwit}
-                                    classNameProp={
-                                        // isEmpty
-                                        //     ? 'disabledBtn'
-                                        // :
-                                        'blueBtn blueBtntext'
-                                    }
+                                    classNameProp={'blueBtn blueBtntext'}
                                     title={'Твитнуть'}
                                 ></Button>
                             </div>

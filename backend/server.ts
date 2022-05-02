@@ -7,6 +7,8 @@ import { passport } from './core/passport'
 require('./core/db')
 import { registerValidation } from './validations/register'
 import { twitsValidation } from './validations/twits'
+import multer from 'multer'
+import { UploadCrtl } from './controllers/UploadContorller'
 
 const app = express()
 
@@ -40,6 +42,10 @@ app.delete('/twits/:id', passport.authenticate('jwt'), TwitCtrl.delete)
 app.post('/auth/register', registerValidation, UserCtrl.create)
 app.get('/auth/verify', registerValidation, UserCtrl.verify)
 app.post('/auth/login', passport.authenticate('local'), UserCtrl.afterLogin)
+
+const upload = multer({dest:'uploads/'}) 
+
+app.post('/upload', upload.single(''), UploadCrtl.upload)
 
 app.listen(process.env.PORT || 8888, (): void => {
     console.log('Server STARTED!!!')

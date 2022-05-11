@@ -42,10 +42,10 @@ app.delete('/twits/:id', passport.authenticate('jwt'), TwitCtrl.delete)
 app.post('/auth/register', registerValidation, UserCtrl.create)
 app.get('/auth/verify', registerValidation, UserCtrl.verify)
 app.post('/auth/login', passport.authenticate('local'), UserCtrl.afterLogin)
+const storage = multer.memoryStorage()
+const upload = multer({storage}) 
 
-const upload = multer({dest:'uploads/'}) 
-
-app.post('/upload', upload.single(''), UploadCrtl.upload)
+app.post('/upload', upload.single('image'), UploadCrtl.upload)
 
 app.listen(process.env.PORT || 8888, (): void => {
     console.log('Server STARTED!!!')

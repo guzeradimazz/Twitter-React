@@ -52,7 +52,8 @@ class TwitController {
                 const data: TwitModelInterface = {
                     text: req.body.text,
                     user: user._id,
-                    like: Math.floor(Math.random() * 30)
+                    like: Math.floor(Math.random() * 30),
+                    images: req.body.images
                 }
                 const twit = await TwitModel.create(data)
                 res.json({

@@ -16,10 +16,64 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.tempMargin{
+    margin-top: 120px !important;
+}
+.twit-btn-image{   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url('../images/icons8-изображение-96.png');
+    width: 50px !important;
+    height: 50px !important;
+    margin-left: 20px !important;
+    margin-top: 40px !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+.twit-btns2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
 .navbar__menu {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+.imagesList2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.img2{
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px !important;
+    margin: 10px !important;
+    width: 150px;
+    height: 150px;
+}
+.imagesList{
+    display: flex;
+    flex-direction: row;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+.img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px !important;
+    padding-right: 5px;
+    width: 100px;
+    height: 100px;
 }
 .navbar__menu a{
     margin-top: 20px !important;

@@ -6,6 +6,7 @@ export interface TwitModelInterface {
     text: String
     user: UserDocumentType | String
     like: Number
+    images?:[]
 }
 export type TwitDocumentType = TwitModelInterface & Document
 
@@ -20,6 +21,11 @@ const TwitSchema = new Schema<TwitModelInterface>(
             required: true,
             type: Schema.Types.ObjectId,
         },
+        images: [
+            {
+                type: String,
+            },
+        ],
         like: {
             required: false,
             type: Number,

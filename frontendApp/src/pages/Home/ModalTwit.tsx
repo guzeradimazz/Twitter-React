@@ -12,7 +12,7 @@ export const ModalTwit = ({ isOpen, setIsOpen }: any) => {
     const dispatch = useDispatch()
 
     const handleClickAddTwit = () => {
-        dispatch(fetchAddTwit(text))
+        // dispatch(fetchAddTwit(text))
     }
     if (!isOpen) return null
     else {

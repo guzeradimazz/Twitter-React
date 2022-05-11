@@ -12,7 +12,7 @@ export const TwitList = () => {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className='tempMagin'>
             {twits.map((twit) => (
                 <Twit
                     _id={twit._id}
@@ -22,6 +22,7 @@ export const TwitList = () => {
                     createdAt={twit.createdAt}
                     avatarUrl={twit.user.avatarUrl}
                     like={twit.like}
+                    images={twit.images}
                 />
             ))}
         </div>

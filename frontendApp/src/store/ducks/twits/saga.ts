@@ -17,17 +17,16 @@ export function* fetchTwitsRequest() {
         yield put(setTwitsLoadingState(LoadingState.ERROR))
     }
 }
-async function addTwitFunction(payload: string): Promise<Twit> {
-    const { data } = await axios.post('/twits', {
-        text: payload,
-    })
+async function addTwitFunction(payload: {
+    text: string
+    images: string[]
+}): Promise<Twit> {
+    const { data } = await axios.post('/twits', payload)
     return data
 }
-export function* addTwitRequest({
-    payload: text,
-}: FetchAddTwitActionInterface) {
+export function* addTwitRequest({ payload }: FetchAddTwitActionInterface) {
     try {
-        const item: Twit = yield call(addTwitFunction, text)
+        const item: Twit = yield call(addTwitFunction, payload)
         yield put(AddTwit(item))
     } catch (error) {
         yield put(setTwitsLoadingState(LoadingState.ERROR))

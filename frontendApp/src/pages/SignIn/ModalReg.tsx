@@ -40,6 +40,10 @@ const ModalReg: React.FC<Register> = ({
         try {
             dispatch(fethcSignUp(data))
         } catch (error) {}
+        setIsOpenIn(false)
+        setInterval(() => {
+            window.location.reload()
+        }, 500);
     }
 
     if (!isOpenIn) {

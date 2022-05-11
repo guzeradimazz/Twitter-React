@@ -22,7 +22,6 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
     const params: { _id?: string } = useParams()
     const id = params._id
     const [isOpenModal, setIsOpenModal] = useState(false)
-
     useEffect(() => {
         if (id) {
             dispatch(FetchTwitData(id))
@@ -56,13 +55,32 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
                             </span>
                             <span className="twit_header__username">
                                 @{twitData.data.user.username}
-                            </span><br /><br /><br />
+                            </span>
+                            <br />
+                            <br />
+                            <br />
                             <span className="twit_header__fullname">
-                                {formatDate(new Date(twitData.data.createdAt))} назад
+                                {formatDate(new Date(twitData.data.createdAt))}{' '}
+                                назад
                             </span>
                         </div>
                     </div>
                     <p>{twitData.data.text}</p>
+                    <div>
+                        {twitData.data.images ? (
+                            <div className="imagesList3">
+                                {twitData.data.images.map((url) => (
+                                    <img
+                                        className="img3"
+                                        key={url}
+                                        src={url}
+                                        alt="my img"
+                                    />
+                                ))}
+                            </div>
+                        ) : null}
+                    </div>
+                    <p style={{color:'gray',fontSize:'15px'}}>{twitData.data?.createdAt ? `${twitData.data?.createdAt}` : null}</p>
                     <div className="twit-group">
                         <IconButton aria-label="default">
                             <ChatBubbleOutlineTwoToneIcon color="primary" />

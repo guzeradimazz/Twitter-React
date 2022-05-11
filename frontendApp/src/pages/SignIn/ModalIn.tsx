@@ -32,10 +32,14 @@ const ModalIn: React.FC<Login> = ({
     const onSubmit = async (data: LoginForm) => {
         try {
             dispatch(fetchUserData(data))
-            setIsOpenIn(false)
+            
         } catch (error) {
             console.log(error)
         }
+        setInterval(()=>{
+            setIsOpenIn(false)
+            window.location.reload()
+        },500)
     }
 
     if (!isOpenIn) {

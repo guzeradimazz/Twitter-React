@@ -78,3 +78,12 @@
     font-size: 22px;
     padding-top: 20px;
 }
+
+.imagesList3{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+.img3{
+    width:300px;
+}

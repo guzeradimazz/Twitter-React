@@ -19,6 +19,7 @@ interface TwitProps {
         username: string
         avatarUrl: string
     }
+    images?: string[]
     like: number
 }
 export const formatDate = (date: Date): string => {
@@ -30,6 +31,7 @@ export const Twit: React.FC<TwitProps> = ({
     text,
     createdAt,
     user,
+    images,
     like,
 }: TwitProps): React.ReactElement => {
     return (
@@ -43,6 +45,20 @@ export const Twit: React.FC<TwitProps> = ({
                             @{user.username} - {formatDate(new Date(createdAt))}{' '}
                             назад
                         </span>
+                    </div>
+                    <div style={{paddingTop:'10px'}}>
+                        {images ? (
+                            <div className="imagesList2">
+                                {images.map((url) => (
+                                    <img
+                                        className="img2"
+                                        key={url}
+                                        src={url}
+                                        alt="my img"
+                                    />
+                                ))}
+                            </div>
+                        ) : null}
                     </div>
                     <div className="twit-text__body">{text}</div>
                     <div className="twit-group">

@@ -32,12 +32,17 @@ export const HomeFeed: React.FC = (): React.ReactElement => {
         setImages([])
         window.location.reload()
     }
+    const avatarka = window.localStorage.getItem('AVATAR')
 
     return (
         <div className="feed">
             <h1>Главная</h1>
             <div className="twit-block">
-                <Avatar alt="Remy Sharp" className="userAvatar" />
+                <Avatar
+                    alt="remy"
+                    className="userAvatar"
+                    src={avatarka ? avatarka : undefined}
+                />
                 <div className="twit-text__body">
                     <input
                         type="text"
@@ -47,7 +52,7 @@ export const HomeFeed: React.FC = (): React.ReactElement => {
                     />
                     <div className="twit-btns2">
                         <UploadImages
-                            images={images.map(i=>i.blobUrl)}
+                            images={images.map((i) => i.blobUrl)}
                             onChangeImages={setImages}
                         />
                         <div className="btnAdd">

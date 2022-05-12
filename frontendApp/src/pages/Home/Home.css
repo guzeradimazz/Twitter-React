@@ -16,10 +16,10 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.tempMargin{
+.tempMargin {
     margin-top: 120px !important;
 }
-.twit-btn-image{   
+.twit-btn-image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -32,7 +32,7 @@
     border: none !important;
     border-radius: 0 !important;
 }
-.twit-btns2{
+.twit-btns2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -43,7 +43,7 @@
     flex-direction: column;
     justify-content: space-around;
 }
-.imagesList2{
+.imagesList2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -51,7 +51,36 @@
     width: 100%;
     align-items: center;
 }
-.img2{
+.userBlock {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    transition: all .3s ease;
+}
+.userBlock:hover{
+    padding: 5px;
+    transition: all .3s ease;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgb(108 200 255 / 38%);
+    background-color: rgba(108, 177, 255, 0.382);
+}
+.userBlock-text p:nth-child(1){
+    color: black;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.userBlock-text p:nth-child(2){
+    color: gray;
+}
+.userBlock-text {
+    box-shadow: 0 0 0 0 rgb(108 200 255 / 38%);
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+.img2 {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 4px !important;
@@ -59,7 +88,7 @@
     width: 150px;
     height: 150px;
 }
-.imagesList{
+.imagesList {
     display: flex;
     flex-direction: row;
     height: 120px;
@@ -67,7 +96,7 @@
     justify-content: space-between;
     width: 90%;
 }
-.img{
+.img {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px !important;
@@ -75,7 +104,7 @@
     width: 100px;
     height: 100px;
 }
-.navbar__menu a{
+.navbar__menu a {
     margin-top: 20px !important;
 }
 .navbar__menu-item,

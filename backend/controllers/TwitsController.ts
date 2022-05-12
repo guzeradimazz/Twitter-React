@@ -53,9 +53,12 @@ class TwitController {
                     text: req.body.text,
                     user: user._id,
                     like: Math.floor(Math.random() * 30),
-                    images: req.body.images
+                    images: req.body.images,
                 }
                 const twit = await TwitModel.create(data)
+                if(twit._id){
+                    user.twits!.push(twit._id)
+                }
                 res.json({
                     status: 'success',
                     data: await twit.populate('user'),

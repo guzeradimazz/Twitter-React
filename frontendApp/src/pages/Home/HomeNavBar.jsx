@@ -1,25 +1,24 @@
 import LanguageIcon from '@mui/icons-material/Language'
-import TwitterIcon from '@mui/icons-material/Twitter'
 import { IconButton, Typography } from '@mui/material'
+import Avatar from '@mui/material/Avatar';
 import VpnKeyIcon from '@mui/icons-material/VpnKey'
 import PersonIcon from '@mui/icons-material/Person'
 import { Link } from 'react-router-dom'
 import Button from '../../UI/Button'
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from '@mui/icons-material/Logout'
+import { useSelector } from 'react-redux'
+import { selectUserState } from '../../store/ducks/user/selectors'
 
-export const HomeNavBar = ({ setIsOpenModal }) => {
-
-    const handleOut = ()=>{
+export const HomeNavBar = ({ setIsOpenModal}) => {
+    const handleOut = () => {
         window.localStorage.clear()
     }
+    const userData = useSelector(selectUserState)
+    if (!userData) return null
     return (
         <div className="navbar">
             <div className="navbar__menu">
-                <Link to="/home">
-                    <IconButton aria-label="default">
-                        <TwitterIcon color="primary" />
-                    </IconButton>
-                </Link>
+                <div className="userIcon"></div>
                 <Link to="/home">
                     <IconButton>
                         <LanguageIcon color="primary" />
@@ -38,7 +37,7 @@ export const HomeNavBar = ({ setIsOpenModal }) => {
                         <Typography color="grey">Выход</Typography>
                     </IconButton>
                 </Link>
-                <Link to='/home'>
+                <Link to="/userpage">
                     <IconButton>
                         <PersonIcon color="primary" />
                         <Typography color="grey">Профиль</Typography>
@@ -51,7 +50,15 @@ export const HomeNavBar = ({ setIsOpenModal }) => {
                     title={'Твитнуть'}
                 ></Button>
             </div>
-            <div className="userIcon"></div>
+            <div className="userBlock">
+                <div>
+                    <Avatar src={window.localStorage.getItem('AVATAR')}></Avatar>
+                </div>
+                <div className='userBlock-text'>
+                    <p>{userData.data?.fullname}</p>
+                    <p>{userData.data?.email}</p>
+                </div>
+            </div>
         </div>
     )
 }

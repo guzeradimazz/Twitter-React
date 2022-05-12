@@ -24,7 +24,9 @@ class UserController {
         try {
             const userId = req.params.id
             if (userId) {
-                const user = await UserModel.findById(userId).exec()
+                const user = await UserModel.findById(userId)
+                    .populate('twits')
+                    .exec()
                 res.json({
                     status: 'success',
                     data: user,
@@ -53,6 +55,7 @@ class UserController {
                 fullname: req.body.fullname,
                 password: generateHash(req.body.password),
                 confirmedHash: generateHash(Math.random().toString()),
+                avatarUrl: 'https://random.imagecdn.app/150/150',
             }
             const user = await UserModel.create(data)
 
@@ -114,10 +117,7 @@ class UserController {
         }
     }
 
-    async afterLogin(
-        req: any,
-        res: express.Response
-    ): Promise<void> {
+    async afterLogin(req: any, res: express.Response): Promise<void> {
         try {
             const user = req.user
                 ? (req.user as UserDocumentType).toJSON()

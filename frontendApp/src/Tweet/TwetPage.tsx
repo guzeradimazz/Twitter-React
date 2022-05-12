@@ -28,6 +28,7 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
         }
     }, [dispatch, id, params])
 
+
     if (!twitData.data) return null
     return (
         <section className="home">
@@ -47,7 +48,7 @@ export const TwetPage: React.FC = (): React.ReactElement | null => {
                         <Avatar
                             className="avatar"
                             alt="Remy Sharp"
-                            src={twitData.data.user.avatarUrl}
+                            src={'https://random.imagecdn.app/150/150'}
                         />
                         <div>
                             <span className="twit_header__fullname">

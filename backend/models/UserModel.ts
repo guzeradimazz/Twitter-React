@@ -11,6 +11,8 @@ export interface UserModelInterface {
     confirmedHash: String
     about?: String
     website?: String
+    twits?: String[]
+    avatarUrl:String
 }
 export type UserDocumentType = UserModelInterface & Document
 
@@ -43,6 +45,8 @@ const UserSchema = new Schema<UserModelInterface>(
             required: true,
             type: String,
         },
+        avatarUrl:String,
+        twits: [{ type: Schema.Types.ObjectId, ref: 'Twit' }],
         about: String,
         website: String,
     },

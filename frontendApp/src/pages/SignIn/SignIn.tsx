@@ -16,6 +16,8 @@ const SignIn: React.FC = (): React.ReactElement => {
     const navigate = useNavigate()
     const checkAuth = async () => {
         const { data } = await LogInApi.getMe()
+        console.log(data);
+        
         dispatch(setUserData(data))
         navigate('/home')
     }

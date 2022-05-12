@@ -37,7 +37,7 @@ export const Twit: React.FC<TwitProps> = ({
     return (
         <Link to={`/home/twit/${_id}`}>
             <div className="twit">
-                <Avatar alt="Remy Sharp" src={user.avatarUrl} />
+                <Avatar alt="Remy Sharp" src={'https://random.imagecdn.app/150/150'} />
                 <div className="twit-text">
                     <div className="twit-text__title">
                         <b>{user.fullname}</b>{' '}
